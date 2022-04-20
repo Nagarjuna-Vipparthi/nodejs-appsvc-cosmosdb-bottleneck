@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  webAppName: 'nag-test'
+  webAppName: 'nag-malt-test'
   serviceConnection: 'MALT_Trial_RG'
   azureSubscriptionId: '7c71b563-0dc0-4bc0-bcf6-06f8f0516c7a'
   loadTestResource: 'WebAppBottleneckTest'
@@ -58,7 +58,7 @@ stages:
         azureResourceManagerConnection: $(serviceConnection)
         subscriptionId: $(azureSubscriptionId)
         action: 'Create Or Update Resource Group'
-        resourceGroupName: '$(webAppName)eastus2-rg'
+        resourceGroupName: '$(webAppName)-rg'
         location: $(location)
         templateLocation: 'Linked artifact'
         csmFile: '$(System.DefaultWorkingDirectory)/windows-webapp-template.json'
